@@ -3,7 +3,7 @@
 == Use Cases
 
 .Use Case Diagramm
-[uml,file="uml-example.png"]
+[uml,file="use-case-diagramm.png"]
 --
 
 title Verschlüsselung mittels SmartCard
