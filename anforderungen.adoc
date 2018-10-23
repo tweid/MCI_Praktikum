@@ -1,5 +1,6 @@
-= SmartCard Verschlüsselung: Anforderungen
+= SmartCard Verschlüsselung
 
+== Use Cases
 
 .Use Case Diagramm
 [uml,file="uml-example.png"]
@@ -69,3 +70,22 @@ User --> (decrypt)
 | *Abgrenzung*         | Keine Auswahl der Verschlüsselungsalgorithmen, Nur Dateien entschlüsselbar,
 | *Fragen, Kommentare* | -
 |====================
+
+== Anforderungen
+.Anforderungen
+[cols="1,2,3",width="100%",options="header,footer"]
+|====================
+| Nr.   | Name                      | Beschreibung
+|1      | Verschlüsseln von Dateien | Der User kann Dateien sicher verschlüsseln, sodass nur ausgewählte Personen diese lesen können.
+|1.1    | Auswahl von Dateien       | Der User kann Dateien auswählen die er verschlüsseln will.
+|1.2    | Auswahl von Empfängern    | Der User kann Empfänger auswählen, die die verschlüsselte Dateien öfnnen können.
+|1.3    | Verschlüsselung           | Die Daten werden mit einem sicheren Algorithmus verschlüsselt
+|1.4    | Zur-Verfügung-Stellen von verschlüsselten Daten   | Die Daten werden verschlüsselt zum Download/Speichern zur Verfügung gestellt
+|2      | Entschlüsseln von Daten   | Der User kann Dateien entschlüsseln
+|2.1    | Auswahl von zu entschlüsselnden Daten     | Der User kann eine verschlüsselte Datei auswählen
+|2.2    | Automatische Schlüssel-Auswahl    | Das Programm wählt automatisch den passenden Schlüssel aus
+|2.3    | Entschlüsselung           | Die Daten werden mit einem passenden Algorithmus entschlüsselt
+|2.4    | Zur-Verfügung-Stellen von entschlüsselten Daten   | Die Daten werden entschlüsselt zum Download/Speichern zur Verfügung gestellt 
+|3      | Safety (Hiermit ist der Free oder Strong Safety im American Football gemeint)   | Das Programm muss sicher zu benutzen sein
+|3.1    | Überprüfung der SmartCard | Das Programm überprüft, dass die SmartCard sicher und funktionell vorhanden ist
+|3.2    | Supervisor-Access         | Das Programm muss sicherstellen, dass der Supervisor aller verschlüsselten Dateien entschlüsseln kann, wie ist mir egal!
