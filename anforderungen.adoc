@@ -1,0 +1,71 @@
+= SmartCard Verschlüsselung: Anforderungen
+
+
+.Use Case Diagramm
+[uml,file="uml-example.png"]
+--
+
+title Verschlüsselung mittels SmartCard
+
+
+rectangle UseCases {
+    (Verschlüsseln) as encrypt
+    (Entschlüsseln) as decrypt
+}
+
+:User:
+:Supervisor:
+
+User --> (encrypt)
+Supervisor --> (decrypt)
+User --> (decrypt)
+--
+
+
+.Verschlüsseln
+[cols="1,2a",width="100%",options="footer"]
+|====================
+| *Name*               | Verschlüsseln 
+| *Akteur*             | User 
+| *Trigger*            | User will Datei verschlüsseln
+| *Kurzbeschreibung*   | Das Programm verschlüsselt eine oder mehrere vom User ausgewählte Datei(en). Diese kann von einer oder mehreren vom User ausgewählte(n) Person(en). entschlüsselt werden.
+| *Vorbedingungen*     | Mindestens eine Datei, mindestens ein Empfänger, eingesteckte SmartCard
+| *Essentielle Schritte* |[cols="2,1"]
+!===
+! Intention der Systemumgebung ! Reaktion des Systems
+
+! User startet Programm ! Programm ist bereit
+! User steckt SmartCard ein ! Programm erlaubt Interaktion
+! User wählt Empfänger aus ! Programm zeigt Empfänger an
+! User gibt Datei(en) an ! Programm zeigt zu verschlüsselnde Dateien
+! User startet Verschlüsselung ! Programm zeigt verschlüsselte Dateien an
+! User beendet das Programm ! Programm ist beendet
+| *Ausnahmefälle*      | SmartCard kann nicht gelesen werden, kein Speicherplatz
+| *Nachbedingung*      | Dateien sind verschlüsselt und können nur durch Empfänger entschlüsselt werden
+| *Abgrenzung*         | Keine Auswahl der Verschlüsselungsparametern, Kein Hinzufügen von Empfängern zur Auswahl, Nur Dateien verschlüsselbar
+| *Fragen, Kommentare* | -
+|====================
+
+
+.Entschlüsseln
+[cols="1,2a",width="100%",options="footer"]
+|====================
+| *Name*               | Entschlüsseln 
+| *Akteur*             | User, Supervisor 
+| *Trigger*            | User oder Supervisor will Datei entschlüsseln
+| *Kurzbeschreibung*   | Das Programm entschlüsselt eine oder mehrere vom User oder Supervisor ausgewählte Datei(en).
+| *Vorbedingungen*     | Mindestens eine Datei, eingesteckte SmartCard.
+| *Essentielle Schritte* |[cols="2,1"]
+!===
+! Intention der Systemumgebung ! Reaktion des Systems
+! User/Supervisor startet Programm ! Programm ist bereit
+! User/Supervisor steckt SmartCard ein ! Programm erlaubt Interaktion
+! User/Supervisor wählt Datei aus die er entschlüsseln kann ! Programm zeigt Datei an
+! User wählt Datei aus die er nicht entschlüsseln kann ! Programm zeigt Fehlermeldung an
+! User/Supervisor startet Entschlüsselung ! Programm zeigt entschlüsselte Dateien an
+! User/Supervisor beendet das Programm ! Programm ist beendet
+| *Ausnahmefälle*      | SmartCard kann nicht gelesen werden, kein Speicherplatz
+| *Nachbedingung*      | Dateien sind entschlüsselt und können von jedem gelesen werden
+| *Abgrenzung*         | Keine Auswahl der Verschlüsselungsalgorithmen, Nur Dateien entschlüsselbar,
+| *Fragen, Kommentare* | -
+|====================
