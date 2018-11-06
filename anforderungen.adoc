@@ -57,7 +57,7 @@ User --> (decrypt)
 
 .Entschlüsseln
 [cols="1,2a",width="100%",options="footer"]
-|====================
+|==================== 
 | *Name*               | Entschlüsseln 
 | *Akteur*             | User, Supervisor 
 | *Trigger*            | User oder Supervisor will Datei entschlüsseln
@@ -101,5 +101,12 @@ User --> (decrypt)
 
 == Story Board
 
+=== Verschlüsseln
 
+.Verschlüsseln von Dateien
+image::encrypt.svg[Verschlüsseln von Dateien]
 
+=== Entschlüsseln
+
+.Entschlüsseln von Dateien
+image::decrypt.svg[Entschlüsseln von Dateien]
