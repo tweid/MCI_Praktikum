@@ -103,3 +103,12 @@ User --> (decrypt)
 
 
 
+=== Verschlüsseln
+
+.Verschlüsseln von Dateien
+image::encrypt.svg[]
+
+=== Entschlüsseln
+
+.Entschlüsseln von Dateien
+image::decrypt.svg[]
