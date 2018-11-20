@@ -104,10 +104,14 @@ User --> (decrypt)
 === Verschlüsseln
 
 .Verschlüsseln von Dateien
-image::encrypt.svg[Verschlüsseln von Dateien]
+image::encrypt1.png[Verschlüsseln von Dateien]
+
+.Verschlüsseln von Dateien zweiter Schritt
+image::encrypt2.png[Verschlüsseln von Dateien zweiter Schritt]
+
 
 === Entschlüsseln
 
 .Entschlüsseln von Dateien
-image::decrypt.svg[Entschlüsseln von Dateien]
+image::decrypt.png[Entschlüsseln von Dateien]
 
